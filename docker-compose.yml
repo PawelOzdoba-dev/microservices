@@ -1,0 +1,41 @@
+version: '3.8'
+services:
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+      - 9411:9411
+    networks:
+      - cloud-network
+  discovery:
+    build: ./discovery
+    ports:
+      - 8761:8761
+    environment:
+      - SPRING_ZIPKIN_BASEURL=http://zipkin:9411
+    networks:
+      - cloud-network
+  gateway:
+    build: ./gateway
+    ports:
+      - 8080:8080
+    environment:
+      - SPRING_ZIPKIN_BASEURL=http://zipkin:9411
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery:8761
+    networks:
+      - cloud-network
+networks:
+  cloud-network:
+    driver: bridge
+
+
+
+#  gateway:
+#    build: ./gateway
+#    ports:
+#      - 8080:8080
+#    environment:
+#      - SPRING_ZIPKIN_BASEURL=http://zipkin
+#    networks:
+#      - cloud-network
+
+#    spróbować postawić gateway - utworzenie dockerfile i zaktualizować docker-compose (podobnie jak discovery)

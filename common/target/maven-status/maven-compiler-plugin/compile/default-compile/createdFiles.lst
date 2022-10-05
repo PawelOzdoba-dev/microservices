@@ -1,0 +1,10 @@
+pl\app\common\ChangePasswordMailDto.class
+pl\app\common\ProductDto.class
+pl\app\common\MailDto.class
+pl\app\common\SendEmailDto$SendEmailDtoBuilder.class
+pl\app\common\ChangePasswordMailDto$ChangePasswordMailDtoBuilder.class
+pl\app\common\UserDto.class
+pl\app\common\MailDto$MailDtoBuilder.class
+pl\app\common\ProductDto$ProductDtoBuilder.class
+pl\app\common\SendEmailDto.class
+pl\app\common\UserDto$UserDtoBuilder.class

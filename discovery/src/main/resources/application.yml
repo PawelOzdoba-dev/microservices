@@ -1,0 +1,12 @@
+
+server:
+  port: 8761
+
+spring:
+  application:
+    name: DISCOVERY-SERVICE # nazwa aplikacji kt�ra b?dzie wy?wietlana w zipkin i eurece
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false #ustawiamy aby discovery ktory jest eureka aby nie rejestrowal sie sam w sobie
